@@ -7,17 +7,14 @@
 
     <div class="py-12">
         <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
-            {{-- Container com fundo escuro para o formulário --}}
             <div class="bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-100">
 
-                    {{-- O componente de erro padrão do Breeze já funciona bem aqui --}}
                     <x-auth-session-status class="mb-4" :status="session('status')" />
 
                     <form action="{{ route('movies.store') }}" method="POST">
                         @csrf
 
-                        {{-- Campo Título --}}
                         <div class="mb-4">
                             <label for="title" class="block mb-2 text-sm font-medium text-gray-300">Título</label>
                             <input type="text" name="title" id="title"
@@ -26,7 +23,6 @@
                             <x-input-error :messages="$errors->get('title')" class="mt-2" />
                         </div>
 
-                        {{-- Campo Diretor --}}
                         <div class="mb-4">
                             <label for="director" class="block mb-2 text-sm font-medium text-gray-300">Diretor</label>
                             <input type="text" name="director" id="director"
@@ -35,7 +31,6 @@
                             <x-input-error :messages="$errors->get('director')" class="mt-2" />
                         </div>
 
-                        {{-- Campo Ano --}}
                         <div class="mb-4">
                             <label for="year" class="block mb-2 text-sm font-medium text-gray-300">Ano</label>
                             <input type="number" name="year" id="year"
@@ -46,7 +41,6 @@
                             <x-input-error :messages="$errors->get('year')" class="mt-2" />
                         </div>
 
-                        {{-- Campo Avaliação --}}
                         <div class="mb-4">
                             <label for="review" class="block mb-2 text-sm font-medium text-gray-300">Avaliação (opcional, 1 a 10)</label>
                             <input type="number" name="review" id="review"
@@ -55,7 +49,6 @@
                             <x-input-error :messages="$errors->get('review')" class="mt-2" />
                         </div>
 
-                        {{-- Botões --}}
                         <div class="flex items-center gap-4 mt-6">
                             <button type="submit"
                                     class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">

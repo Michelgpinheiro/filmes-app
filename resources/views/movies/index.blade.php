@@ -8,7 +8,6 @@
     <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
-            {{-- Alertas com efeito de fade-out --}}
             @if(session('success'))
                 <div id="success_message" class="mb-4 p-4 bg-green-100 text-green-800 rounded transition-opacity duration-500 ease-in-out">
                     {{ session('success') }}
@@ -16,9 +15,7 @@
                 <script>
                     const successMessage = document.querySelector('#success_message');
                     if (successMessage) {
-                        // Inicia o fade-out após 4.5s
                         setTimeout(() => { successMessage.classList.add('opacity-0'); }, 4500);
-                        // Remove o elemento completamente após 5s
                         setTimeout(() => { successMessage.style.display = 'none'; }, 5000);
                     }
                 </script>
@@ -29,19 +26,16 @@
                 </div>
             @endif
 
-            {{-- Filtro --}}
             <form method="GET" action="{{ route('movies.index') }}" class="mb-4 flex gap-2">
                 <input type="text" name="search" placeholder="Buscar filme" 
                        value="{{ request('search') }}" class="border-gray-300 rounded">
                 <button type="submit" class="bg-blue-500 text-white px-3 py-1 rounded">Buscar</button>
             </form>
 
-            {{-- Botão adicionar --}}
             <a href="{{ route('movies.create') }}" class="mb-4 inline-block bg-green-500 text-white px-4 py-2 rounded">
                 + Adicionar Filme
             </a>
 
-            {{-- Lista de filmes com estilo DARK --}}
             <div class="overflow-x-auto shadow-md rounded-lg">
                 <table class="w-full">
                     <thead class="bg-gray-700 text-gray-300">
