@@ -19,7 +19,6 @@
             <div class="block">
                 <a href="/">
                     <h1 class="text-white text-xl">Filmes</h1>
-                    {{-- <x-application-logo class="w-20 h-20 fill-current text-gray-500" /> --}}
                 </a>
             </div>
 

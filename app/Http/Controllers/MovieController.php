@@ -39,7 +39,7 @@ class MovieController extends \Illuminate\Routing\Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'director' => 'nullable|string|max:255',
-            'year' => 'nullable|integer',
+            'year' => ['nullable', 'integer', 'min:1888', 'max:' . (date('Y') + 1)],
             'review' => 'nullable|numeric|min:0|max:10',
         ]);
 
@@ -64,7 +64,7 @@ class MovieController extends \Illuminate\Routing\Controller
         $request->validate([
             'title' => 'required',
             'director' => 'required',
-            'year' => 'required|integer',
+            'year' => ['required', 'integer', 'min:1888', 'max:' . (date('Y') + 1)],
         ]);
 
         $movie->update($request->all());
