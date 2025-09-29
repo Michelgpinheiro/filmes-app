@@ -7,12 +7,10 @@
 
     <div class="py-12">
         <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
-            {{-- Container com fundo escuro para o formulário --}}
             <div class="bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-100">
 
                     @if ($errors->any())
-                        {{-- Bloco de erro estilizado para Tailwind --}}
                         <div class="mb-4 bg-red-900 border border-red-400 text-red-200 px-4 py-3 rounded-lg">
                             <strong class="font-bold">Opa!</strong>
                             <span class="block sm:inline">Houve alguns problemas com os seus dados.</span>
@@ -28,7 +26,6 @@
                         @csrf
                         @method('PUT')
 
-                        {{-- Campo Título --}}
                         <div class="mb-4">
                             <label for="title" class="block mb-2 text-sm font-medium text-gray-300">Título</label>
                             <input type="text" name="title" id="title"
@@ -36,7 +33,6 @@
                                    value="{{ old('title', $movie->title) }}" required>
                         </div>
 
-                        {{-- Campo Diretor --}}
                         <div class="mb-4">
                             <label for="director" class="block mb-2 text-sm font-medium text-gray-300">Diretor</label>
                             <input type="text" name="director" id="director"
@@ -44,7 +40,6 @@
                                    value="{{ old('director', $movie->director) }}" required>
                         </div>
 
-                        {{-- Campo Ano --}}
                         <div class="mb-4">
                             <label for="year" class="block mb-2 text-sm font-medium text-gray-300">Ano</label>
                             <input type="number" name="year" id="year"
@@ -54,7 +49,6 @@
                                    oninput="if(this.value.length > 4) this.value = this.value.slice(0, 4);">
                         </div>
 
-                        {{-- Campo Avaliação --}}
                         <div class="mb-4">
                             <label for="review" class="block mb-2 text-sm font-medium text-gray-300">Avaliação (opcional, 1 a 10)</label>
                             <input type="number" name="review" id="review"
@@ -62,7 +56,6 @@
                                    value="{{ old('review', $movie->review) }}" min="1" max="10">
                         </div>
 
-                        {{-- Botões --}}
                         <div class="flex items-center gap-4 mt-6">
                             <button type="submit"
                                     class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">
